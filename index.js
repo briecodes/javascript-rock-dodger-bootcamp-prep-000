@@ -90,7 +90,8 @@ function createRock(x) {
      */
      if (rock.style.top < 380){
       rock.style.top = `"${(positionToInteger(rock.style.top) + 5)}px"`;
-      window.requestAnimationFrame(moveRock)
+      console.log("moving rock…");
+      window.requestAnimationFrame(moveRock);
     }else{
       rock.remove()
     }
