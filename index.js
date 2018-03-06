@@ -129,7 +129,6 @@ function moveDodgerLeft() {
    */
    document.addEventListener('keydown', function(e){
      if (e.which === 37){
-       alert("yo!")
        var leftNumbers = DODGER.style.left.replace('px', '')
        var leftGetTo = leftNumbers - 4
       //  var left = parseInt(leftNumbers, 10)
@@ -139,7 +138,7 @@ function moveDodgerLeft() {
 
        function stepLeft(){
          if (leftNumbers > leftGetTo){
-           DODGER.style.left = `${left - 1}px`
+           DODGER.style.left = `${left - 4}px`
            window.requestAnimationFrame(stepLeft)
          }
        }
