@@ -74,7 +74,7 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
-  function moveRock() {
+  function moveRock(rock) {
     console.log("About to move a rock.")
     // implement me!
     // (use the comments below to guide you!)
@@ -91,8 +91,7 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
      if (positionToInteger(rock.style.top) < 380){
-      top = top + 10
-
+      rocks.style.top = top + 10
       console.log(`moving rock... ${top}`);
       window.requestAnimationFrame(moveRock);
     }else{
@@ -105,7 +104,7 @@ function createRock(x) {
   }
 
   // We should kick of the animation of the rock around here
-  moveRock();
+  moveRock(rock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
