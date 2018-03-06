@@ -91,7 +91,8 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
      if (positionToInteger(rock.style.top) < 380){
-      rock.style.top = `"${(positionToInteger(rock.style.top) + 5)}px"`;
+       top +
+      rock.style.top = top;
       console.log("moving rock...");
       window.requestAnimationFrame(moveRock);
     }else{
