@@ -111,13 +111,8 @@ function endGame() {
 
 function moveDodger(e) {
   // implement me!
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
+  //  * This function should call `moveDodgerLeft()` if the left arrow is pressed and `moveDodgerRight()`
+  //  * if the right arrow is pressed. (Check the constants we've declared for you above.) And be sure to use the functions declared below!
    if (e.which === LEFT_ARROW){
      moveDodgerLeft()
    }
@@ -128,12 +123,10 @@ function moveDodger(e) {
 
 function moveDodgerLeft() {
   // implement me!
-  /**
-   * This function should move DODGER to the left
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   */
-   var leftNumbers = DODGER.style.left.replace('px', '')
-   var leftGetTo = leftNumbers - 4
+  // This function should move DODGER to the left (mabye 4 pixels?). Use window.requestAnimationFrame()!
+   let leftNumbers = DODGER.style.left.replace('px', '')
+   let leftGetTo = leftNumbers - 4
+   console.log(`testing move dodger left. leftNumbers: ${leftNumbers}. leftGetTo: ${leftGetTo}`)
    function stepLeft(){
      if (leftNumbers > leftGetTo){
        DODGER.style.left = `${left - 4}px`
