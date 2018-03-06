@@ -29,12 +29,12 @@ function checkCollision(rock) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
     // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-    const dodgerRightEdge = positionToInteger(DODGER.style.left) + 40;
+    const dodgerRightEdge = positionToInteger(DODGER.style.left) + 40
 
     const rockLeftEdge = positionToInteger(rock.style.left)
 
     // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-    const rockRightEdge = positionToInteger(rock.style.left)+20;
+    const rockRightEdge = positionToInteger(rock.style.left)+20
 
     if (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge || rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge || rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge
        /**
@@ -69,46 +69,30 @@ function createRock(x) {
    */
 
    GAME.append(rock)
-   console.log("I created a rock.");
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
   function moveRock() {
-    console.log("About to move a rock.")
     // implement me!
-    // (use the comments below to guide you!)
-    /**
-     * If a rock collides with the DODGER,
-     * we should call endGame()
-     */
+    // If a rock collides with the DODGER, we should call endGame()
+    // Otherwise, if the rock hasn't reached the bottom of the GAME, we want to move it again.
+    // But if the rock *has* reached the bottom of the GAME, we should remove the rock from the DOM
      if (checkCollision(rock)){
-       console.log("Collision!!");
-       endGame();
-     }
-    /**
-     * Otherwise, if the rock hasn't reached the bottom of
-     * the GAME, we want to move it again.
-     */
-     if (positionToInteger(rock.style.top) < 380){
+       console.log("Collision!!")
+       endGame()
+     }else if (positionToInteger(rock.style.top) < 380){
       rock.style.top = top + 10
-      console.log(`moving rock... ${top}`);
-      window.requestAnimationFrame(moveRock);
+      console.log(`moving rock... ${top}`)
+      window.requestAnimationFrame(moveRock)
     }else{
       rock.remove()
     }
-    /**
-     * But if the rock *has* reached the bottom of the GAME,
-     * we should remove the rock from the DOM
-     */
   }
-
   // We should kick of the animation of the rock around here
-  moveRock();
-  // Add the rock to ROCKS so that we can remove all rocks
-  // when there's a collision
+  moveRock()
+  // Add the rock to ROCKS so that we can remove all rocks when there's a collision
   ROCKS.push(rock)
-
   // Finally, return the rock element you've created
   return rock
 }
@@ -121,8 +105,7 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval)
-  document.getElementsByClassName('rock').remove()
-
+  ROCKS.remove()
   alert("YOU LOSE!")
 }
 
