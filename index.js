@@ -152,7 +152,7 @@ function moveDodgerRight() {
    var leftNumbers = DODGER.style.left.replace('px', '')
    var leftGetTo = leftNumbers + 4
    function stepLeft(){
-     if (leftNumbers < leftGetTo){
+     if (leftNumbers < GAME_WIDTH+40){
        DODGER.style.left = `${left + 4}px`
        window.requestAnimationFrame(stepLeft)
      }
