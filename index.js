@@ -148,7 +148,7 @@ function moveDodgerRight() {
    let leftGetTo = startingPostion + 4
    stepLeft();
    function stepLeft(){
-     if (startingPostion < leftGetTo && positionToInteger(DODGER.style.left)-40 < GAME_WIDTH){
+     if (startingPostion < leftGetTo && positionToInteger(DODGER.style.left)< GAME_WIDTH-40){
        DODGER.style.left = `${usingPosition + 4}px`
        window.requestAnimationFrame(stepLeft)
      }
