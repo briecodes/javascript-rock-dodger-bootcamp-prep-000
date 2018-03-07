@@ -137,12 +137,12 @@ function moveDodgerLeft() {
   //     window.requestAnimationFrame(stepLeft)
   //   }
   // }
-  function move(){
+  function moveL(){
     if(positionToInteger(DODGER.style.left)-4 >= 0){
       DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
     }
   }
-  window.requestAnimationFrame(move)
+  window.requestAnimationFrame(moveL)
 }
 
 function moveDodgerRight() {
@@ -151,16 +151,22 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   let startingPostion = positionToInteger(DODGER.style.left)
-   let usingPosition = positionToInteger(DODGER.style.left)
-   let leftGetTo = startingPostion + 4
-   stepLeft();
-   function stepLeft(){
-     if (startingPostion < leftGetTo && positionToInteger(DODGER.style.left)< GAME_WIDTH-40){
-       DODGER.style.left = `${usingPosition + 4}px`
-       window.requestAnimationFrame(stepLeft)
-     }
-   }
+  //  let startingPostion = positionToInteger(DODGER.style.left)
+  //  let usingPosition = positionToInteger(DODGER.style.left)
+  //  let leftGetTo = startingPostion + 4
+  //  stepLeft();
+  //  function stepLeft(){
+  //    if (startingPostion < leftGetTo && positionToInteger(DODGER.style.left)< GAME_WIDTH-40){
+  //      DODGER.style.left = `${usingPosition + 4}px`
+  //      window.requestAnimationFrame(stepLeft)
+  //    }
+  //  }
+  function moveR(){
+    if(positionToInteger(DODGER.style.left)+40+4 <= GAME_WIDTH){
+      DODGER.style.left = `${positionToInteger(DODGER.style.left)+4}px`
+    }
+  }
+  window.requestAnimationFrame(moveR)
 }
 
 /**
