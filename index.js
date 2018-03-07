@@ -138,7 +138,7 @@ function moveDodgerLeft() {
   //   }
   // }
   function move(){
-    if(positionToInteger(DODGER.style.left)-4 > 0){
+    if(positionToInteger(DODGER.style.left)-4 >= 0){
       DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
     }
   }
