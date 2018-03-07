@@ -125,13 +125,11 @@ function moveDodger(e) {
 function moveDodgerLeft() {
   // implement me!
   // This function should move DODGER to the left (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   let leftNumbers = DODGER.style.left.replace('px', '')
+   let leftNumbers = positionToInteger(DODGER.style.left)
    let leftGetTo = leftNumbers - 2
-   console.log(`testing move dodger left. leftNumbers: ${leftNumbers}. leftGetTo: ${leftGetTo}`)
    function stepLeft(){
      if (leftNumbers > leftGetTo){
        DODGER.style.left = `${left - 2}px`
-       console.log(`testing step left function. ${DODGER.style.left}`)
        window.requestAnimationFrame(stepLeft)
      }
    }
