@@ -137,7 +137,10 @@ function moveDodgerLeft() {
   //     window.requestAnimationFrame(stepLeft)
   //   }
   // }
-  DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
+  function move(){
+    DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
+  }
+  window.requestAnimationFrame(move)
 }
 
 function moveDodgerRight() {
