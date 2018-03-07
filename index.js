@@ -138,7 +138,9 @@ function moveDodgerLeft() {
   //   }
   // }
   function move(){
-    DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
+    if(positionToInteger(DODGER.style.left)-4 > 0){
+      DODGER.style.left = `${positionToInteger(DODGER.style.left)-4}px`
+    }
   }
   window.requestAnimationFrame(move)
 }
