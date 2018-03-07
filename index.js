@@ -82,7 +82,8 @@ function createRock(x) {
        console.log("Collision!!")
        endGame()
      }else if (positionToInteger(rock.style.top) < 380){
-      rock.style.top = top + 10
+      top = top + 10
+      rock.style.top = `${top}px`
       console.log(`moving rock... ${top}`)
       window.requestAnimationFrame(moveRock)
     }else{
