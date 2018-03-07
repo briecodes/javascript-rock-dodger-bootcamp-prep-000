@@ -131,7 +131,7 @@ function moveDodgerLeft() {
   stepLeft();
   function stepLeft(){
     if (startingPostion > leftGetTo){
-      DODGER.style.left = `${leftNumbers - 1}px`
+      DODGER.style.left = `${usingPosition - 1}px`
       window.requestAnimationFrame(stepLeft)
     }
   }
